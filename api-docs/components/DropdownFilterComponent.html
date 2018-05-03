@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -1334,17 +1346,13 @@ export class DropdownFilterComponent implements OnDestroy, OnInit {
     <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;ng-dropdown-search&quot;&gt;
   &lt;div class&#x3D;&quot;ng-dropdown-input-group&quot;&gt;
-    &lt;span class&#x3D;&quot;ng-dropdown-input-group-addon&quot; id&#x3D;&quot;sizing-addon3&quot;&gt;
-      &lt;i class&#x3D;&quot;zmdi zmdi-search&quot;&gt;&lt;/i&gt;
-    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;ng-dropdown-input-group-addon&quot; id&#x3D;&quot;sizing-addon3&quot;&gt;&lt;/span&gt;
     &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;ng-dropdown-input&quot; focus
            [attr.placeholder]&#x3D;&quot;config.translations.filterPlaceholder&quot;
            (keyup)&#x3D;&quot;filterKeyUp()&quot;
            [(ngModel)]&#x3D;&quot;dataStateService.filterText&quot;&gt;
     &lt;span class&#x3D;&quot;ng-dropdown-input-group-btn&quot; *ngIf&#x3D;&quot;dataStateService.filterText&quot;&gt;
-      &lt;button class&#x3D;&quot;ng-dropdown-delete-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearFilter()&quot;&gt;
-        &lt;i class&#x3D;&quot;zmdi zmdi-close&quot;&gt;&lt;/i&gt;
-      &lt;/button&gt;
+      &lt;button class&#x3D;&quot;ng-dropdown-delete-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearFilter()&quot;&gt;&lt;/button&gt;
     &lt;/span&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1376,7 +1384,7 @@ export class DropdownFilterComponent implements OnDestroy, OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="ng-dropdown-search">  <div class="ng-dropdown-input-group">    <span class="ng-dropdown-input-group-addon" id="sizing-addon3">      <i class="zmdi zmdi-search"></i>    </span>    <input type="text" class="ng-dropdown-input" focus           [attr.placeholder]="config.translations.filterPlaceholder"           (keyup)="filterKeyUp()"           [(ngModel)]="dataStateService.filterText">    <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">      <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()">        <i class="zmdi zmdi-close"></i>      </button>    </span>  </div></div><div class="ng-dropdown-divider divider"></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="ng-dropdown-search">  <div class="ng-dropdown-input-group">    <span class="ng-dropdown-input-group-addon" id="sizing-addon3"></span>    <input type="text" class="ng-dropdown-input" focus           [attr.placeholder]="config.translations.filterPlaceholder"           (keyup)="filterKeyUp()"           [(ngModel)]="dataStateService.filterText">    <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">      <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()"></button>    </span>  </div></div><div class="ng-dropdown-divider divider"></div></div>'
     var COMPONENTS = [{'name': 'DataTableBodyComponent', 'selector': '[ngDataTableBody]'},{'name': 'DataTableColGroupComponent', 'selector': '[ngDataTableColGroup]'},{'name': 'DataTableColumnComponent', 'selector': 'ng-data-table-column'},{'name': 'DataTableColumnFilterHeaderComponent', 'selector': '[ngDataTableColumnFilterHeader]'},{'name': 'DataTableColumnFilterTemplateComponent', 'selector': 'ng-data-table-column-filter-template'},{'name': 'DataTableColumnSelectorComponent', 'selector': 'ng-data-table-column-selector'},{'name': 'DataTableColumnTitleHeaderComponent', 'selector': '[ngDataTableColumnTitleHeader]'},{'name': 'DataTableComponent', 'selector': 'ng-data-table'},{'name': 'DataTableHeadComponent', 'selector': '[ngDataTableHead]'},{'name': 'DataTableHeaderComponent', 'selector': 'ng-data-table-header'},{'name': 'DataTableLoadingSpinnerComponent', 'selector': 'ng-data-table-loading-spinner'},{'name': 'DataTableNoDataBodyComponent', 'selector': 'ng-data-table-no-data-body'},{'name': 'DataTablePaginationComponent', 'selector': 'ng-data-table-pagination'},{'name': 'DropdownComponent', 'selector': 'ng-dropdown'},{'name': 'DropdownFilterComponent', 'selector': 'ng-dropdown-filter'},{'name': 'DropdownOptionsComponent', 'selector': 'ng-dropdown-options'},{'name': 'DropdownViewComponent', 'selector': 'ng-dropdown-view'}];
     var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'ElementWidthDirective', 'selector': '[elementWidth]'},{'name': 'FocusDirective', 'selector': '[focus]'},{'name': 'InitDirective', 'selector': '[init]'},{'name': 'ScrollElementDirective', 'selector': '[scrollElement]'},{'name': 'ScrollPositionDirective', 'selector': '[scrollPosition]'}];
     var ACTUAL_COMPONENT = {'name': 'DropdownFilterComponent'};

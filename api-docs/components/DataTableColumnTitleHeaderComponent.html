@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -1460,7 +1472,7 @@
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 
-import { get } from &#x27;lodash&#x27;;
+import get from &#x27;lodash-es/get&#x27;;
 
 import { DataTableSortOrder } from &#x27;../../models/data-table-sort-order.enum&#x27;;
 import { DataTableSelectMode } from &#x27;../../models/data-table-select-mode.model&#x27;;
@@ -1468,7 +1480,7 @@ import { DataFetchMode } from &#x27;../../models/data-fetch-mode.enum&#x27;;
 
 import { DataTableColumnComponent } from &#x27;../data-table-column/data-table-column.component&#x27;;
 
-import { DragAndDropService } from &#x27;../../../utility&#x27;;
+import { DragAndDropService } from &#x27;../../../utility/utility.module&#x27;;
 import { DataTableConfigService } from &#x27;../../services/data-table-config.service&#x27;;
 import { DataTableEventStateService } from &#x27;../../services/data-table-event.service&#x27;;
 import { DataTableDataStateService } from &#x27;../../services/data-table-data-state.service&#x27;;
@@ -1604,9 +1616,7 @@ export class DataTableColumnTitleHeaderComponent {
                   [ngTemplateOutlet]&#x3D;&quot;column.headerTemplate&quot;
                   [ngTemplateOutletContext]&#x3D;&quot;{column: column}&quot;&gt;
     &lt;/ng-container&gt;
-    &lt;span class&#x3D;&quot;ng-data-table-column-sort-icon&quot; [hidden]&#x3D;&quot;!column.sortable&quot;&gt;
-      &lt;i class&#x3D;&quot;zmdi&quot; [ngClass]&#x3D;&quot;column.getSortIconClass()&quot;&gt;&lt;/i&gt;
-    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;ng-data-table-column-sort-icon&quot; [hidden]&#x3D;&quot;!column.sortable&quot; [ngClass]&#x3D;&quot;column.getSortIconClass()&quot;&gt;&lt;/span&gt;
     &lt;span class&#x3D;&quot;ng-data-table-column-resize-handle&quot; *ngIf&#x3D;&quot;column.resizable&quot;
           (mousedown)&#x3D;&quot;onColumnResize($event, column, columnHeader)&quot;&gt;
     &lt;/span&gt;
@@ -1638,7 +1648,7 @@ export class DataTableColumnTitleHeaderComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><th class="ng-data-table-expand-column-header" *ngIf="config.expandableRows"></th><th class="ng-data-table-index-column-header" *ngIf="config.showIndexColumn">  <span [textContent]="config.indexColumnTitle"></span></th><th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">  <input class="ng-data-table-checkbox-input" type="checkbox"         *ngIf="showAllRowSelectCheckbox"         [(ngModel)]="allRowSelected"/></th><ng-container *ngFor="let column of columns">  <th class="ng-data-table-column-header" #columnHeader *ngIf="column.visible"      (click)="onHeaderClick(column, $event)"      (elementWidth)="setColumnWidth($event, column)"      [class.sortable]="column.sortable"      [class.resizable]="column.resizable"      [ngClass]="column.cssClass">    <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>    <ng-container *ngIf="column.headerTemplate"                  [ngTemplateOutlet]="column.headerTemplate"                  [ngTemplateOutletContext]="{column: column}">    </ng-container>    <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable">      <i class="zmdi" [ngClass]="column.getSortIconClass()"></i>    </span>    <span class="ng-data-table-column-resize-handle" *ngIf="column.resizable"          (mousedown)="onColumnResize($event, column, columnHeader)">    </span>  </th></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><th class="ng-data-table-expand-column-header" *ngIf="config.expandableRows"></th><th class="ng-data-table-index-column-header" *ngIf="config.showIndexColumn">  <span [textContent]="config.indexColumnTitle"></span></th><th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">  <input class="ng-data-table-checkbox-input" type="checkbox"         *ngIf="showAllRowSelectCheckbox"         [(ngModel)]="allRowSelected"/></th><ng-container *ngFor="let column of columns">  <th class="ng-data-table-column-header" #columnHeader *ngIf="column.visible"      (click)="onHeaderClick(column, $event)"      (elementWidth)="setColumnWidth($event, column)"      [class.sortable]="column.sortable"      [class.resizable]="column.resizable"      [ngClass]="column.cssClass">    <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>    <ng-container *ngIf="column.headerTemplate"                  [ngTemplateOutlet]="column.headerTemplate"                  [ngTemplateOutletContext]="{column: column}">    </ng-container>    <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable" [ngClass]="column.getSortIconClass()"></span>    <span class="ng-data-table-column-resize-handle" *ngIf="column.resizable"          (mousedown)="onColumnResize($event, column, columnHeader)">    </span>  </th></ng-container></div>'
     var COMPONENTS = [{'name': 'DataTableBodyComponent', 'selector': '[ngDataTableBody]'},{'name': 'DataTableColGroupComponent', 'selector': '[ngDataTableColGroup]'},{'name': 'DataTableColumnComponent', 'selector': 'ng-data-table-column'},{'name': 'DataTableColumnFilterHeaderComponent', 'selector': '[ngDataTableColumnFilterHeader]'},{'name': 'DataTableColumnFilterTemplateComponent', 'selector': 'ng-data-table-column-filter-template'},{'name': 'DataTableColumnSelectorComponent', 'selector': 'ng-data-table-column-selector'},{'name': 'DataTableColumnTitleHeaderComponent', 'selector': '[ngDataTableColumnTitleHeader]'},{'name': 'DataTableComponent', 'selector': 'ng-data-table'},{'name': 'DataTableHeadComponent', 'selector': '[ngDataTableHead]'},{'name': 'DataTableHeaderComponent', 'selector': 'ng-data-table-header'},{'name': 'DataTableLoadingSpinnerComponent', 'selector': 'ng-data-table-loading-spinner'},{'name': 'DataTableNoDataBodyComponent', 'selector': 'ng-data-table-no-data-body'},{'name': 'DataTablePaginationComponent', 'selector': 'ng-data-table-pagination'},{'name': 'DropdownComponent', 'selector': 'ng-dropdown'},{'name': 'DropdownFilterComponent', 'selector': 'ng-dropdown-filter'},{'name': 'DropdownOptionsComponent', 'selector': 'ng-dropdown-options'},{'name': 'DropdownViewComponent', 'selector': 'ng-dropdown-view'}];
     var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'ElementWidthDirective', 'selector': '[elementWidth]'},{'name': 'FocusDirective', 'selector': '[focus]'},{'name': 'InitDirective', 'selector': '[init]'},{'name': 'ScrollElementDirective', 'selector': '[scrollElement]'},{'name': 'ScrollPositionDirective', 'selector': '[scrollPosition]'}];
     var ACTUAL_COMPONENT = {'name': 'DataTableColumnTitleHeaderComponent'};

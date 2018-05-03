@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -6032,7 +6044,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x2
 import { Subscription } from &#x27;rxjs/Subscription&#x27;;
 import { Observable } from &#x27;rxjs/Observable&#x27;;
 
-import { get } from &#x27;lodash&#x27;;
+import get from &#x27;lodash-es/get&#x27;;
 
 import { DataTableFilterValueExtractCallback } from &#x27;../../models/data-table-filter-value-extract-callback.model&#x27;;
 import { DataTableStorageMode } from &#x27;../../models/data-table-storage-mode.enum&#x27;;
@@ -6053,7 +6065,7 @@ import { DataFetchMode } from &#x27;../../models/data-fetch-mode.enum&#x27;;
 
 import { DataTableColumnComponent } from &#x27;../data-table-column/data-table-column.component&#x27;;
 
-import { DragAndDropService, GlobalRefService } from &#x27;../../../utility&#x27;;
+import { DragAndDropService, GlobalRefService } from &#x27;../../../utility/utility.module&#x27;;
 import { DataTableEventStateService } from &#x27;../../services/data-table-event.service&#x27;;
 import { DataTableDataStateService } from &#x27;../../services/data-table-data-state.service&#x27;;
 import { DataTablePersistenceService } from &#x27;../../services/data-table-persistence.service&#x27;;

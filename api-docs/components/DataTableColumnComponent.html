@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -2075,7 +2087,7 @@ Fallback to field if not provided.</p>
                         <td class="col-md-4">
     
                                 <div class="io-description">
-                                    <b>Returns : </b>    <code>{ &#x27;zmdi-sort-amount-asc&#x27;: boolean; &#x27;zmdi-sort-amount-desc&#x27;: boolean; &#x27;zmdi-format-line-spacing&#x27;: ...</code>
+                                    <b>Returns : </b>    <code>{ &#x27;sort-asc&#x27;: boolean; &#x27;sort-dsc&#x27;: boolean; &#x27;sort-reset&#x27;: boolean; }</code>
     
                                 </div>
                         </td>
@@ -2464,7 +2476,7 @@ import { DropdownMenuPosition } from &#x27;../../../dropdown/models/dropdown-men
 import { DataTableRow } from &#x27;../../models/data-table-row.model&#x27;;
 import { DataTableFilterFieldMapperCallback } from &#x27;../../models/data-table-filter-field-mapper-callback.model&#x27;;
 import { DataTableFilterExpressionCallback } from &#x27;../../models/data-table-filter-expression-callback.model&#x27;;
-import { DropdownSelectMode } from &#x27;../../../dropdown&#x27;;
+import { DropdownSelectMode } from &#x27;../../../dropdown/dropdown.module&#x27;;
 
 import { DataTableConfigService } from &#x27;../../services/data-table-config.service&#x27;;
 import { DataTableEventStateService } from &#x27;../../services/data-table-event.service&#x27;;
@@ -2814,9 +2826,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   public getSortIconClass() {
     return {
-      &#x27;zmdi-sort-amount-asc&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.ASC,
-      &#x27;zmdi-sort-amount-desc&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.DESC,
-      &#x27;zmdi-format-line-spacing&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; undefined || this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.NONE
+      &#x27;sort-asc&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.ASC,
+      &#x27;sort-dsc&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.DESC,
+      &#x27;sort-reset&#x27;: this.sortOrder &#x3D;&#x3D;&#x3D; undefined || this.sortOrder &#x3D;&#x3D;&#x3D; DataTableSortOrder.NONE
     };
   }
 

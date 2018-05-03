@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -1191,8 +1203,8 @@ import { ElementWidthDirective } from &#x27;./directives/element-width.directive
 
 import { DATA_TABLE_CONFIG } from &#x27;./services/data-table-config.service&#x27;;
 
-import { DropdownModule } from &#x27;../dropdown&#x27;;
-import { UtilityModule } from &#x27;../utility&#x27;;
+import { DropdownModule } from &#x27;../dropdown/dropdown.module&#x27;;
+import { UtilityModule } from &#x27;../utility/utility.module&#x27;;
 
 const COMPONENTS &#x3D; [
   DataTableHeaderComponent,
@@ -1257,6 +1269,36 @@ export class DataTableModule {
     };
   }
 }
+
+// exports
+import { DataFetchMode } from &#x27;./models/data-fetch-mode.enum&#x27;;
+
+export { DataTableSortOrder } from &#x27;./models/data-table-sort-order.enum&#x27;;
+export { DataTableStorageMode } from &#x27;./models/data-table-storage-mode.enum&#x27;;
+
+export { DataTableCellBindEventArgs } from &#x27;./models/data-table-cell-bind-event-args.model&#x27;;
+export { DataTableQueryResult } from &#x27;./models/data-table-query-result.model&#x27;;
+export { DataTableFilterColumn } from &#x27;./models/data-table-filter-column.model&#x27;;
+export { DataTableSortColumn } from &#x27;./models/data-table-sort-column.model&#x27;;
+export { DataTableFilterOption } from &#x27;./models/data-table-filter-option.model&#x27;;
+export { DataTableCellClickEventArgs } from &#x27;./models/data-table-cell-click-event-args.model&#x27;;
+export { DataTableHeaderClickEventArgs } from &#x27;./models/data-table-header-click-event-args.model&#x27;;
+export { DataTableDoubleClickEventArgs } from &#x27;./models/data-table-double-click-event-args.model&#x27;;
+export { DataTableRowClickEventArgs } from &#x27;./models/data-table-row-click-event-args.model&#x27;;
+export { DataTableScrollPoint } from &#x27;./models/data-table-scroll-point.model&#x27;;
+export { DataTableRow } from &#x27;./models/data-table-row.model&#x27;;
+export { DataTableRequestParams } from &#x27;./models/data-table-request-params.model&#x27;;
+export { DataTableTranslations } from &#x27;./models/data-table-translations.model&#x27;;
+export { DataTableDynamicRowSpanExtractorCallback } from &#x27;./models/data-table-group-field-extractor-callback.model&#x27;;
+export { DataTableFilterValueExtractCallback } from &#x27;./models/data-table-filter-value-extract-callback.model&#x27;;
+export { DataTableFilterFieldMapperCallback } from &#x27;./models/data-table-filter-field-mapper-callback.model&#x27;;
+export { DataTableFilterExpressionCallback } from &#x27;./models/data-table-filter-expression-callback.model&#x27;;
+export { DataTableCellColorRenderCallback } from &#x27;./models/data-table-cell-color-render-callback.model&#x27;;
+export { DataTableSelectMode } from &#x27;./models/data-table-select-mode.model&#x27;;
+export { DataFetchMode } from &#x27;./models/data-fetch-mode.enum&#x27;;
+
+export { DataTableComponent } from &#x27;./components/data-table/data-table.component&#x27;;
+export { DataTableColumnComponent } from &#x27;./components/data-table-column/data-table-column.component&#x27;;
 </code></pre>
     </div>
 </div>

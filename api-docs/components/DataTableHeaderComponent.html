@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -1348,7 +1360,7 @@ import { DataFetchMode } from &#x27;../../models/data-fetch-mode.enum&#x27;;
 import { DataTableColumnSelectorComponent } from &#x27;../data-table-column-selector/data-table-column-selector.component&#x27;;
 import { DataTableColumnComponent } from &#x27;../data-table-column/data-table-column.component&#x27;;
 
-import { PopoverComponentLoaderFactoryService, ComponentLoader } from &#x27;../../../utility&#x27;;
+import { PopoverComponentLoaderFactoryService, ComponentLoader } from &#x27;../../../utility/utility.module&#x27;;
 import { DataTableConfigService } from &#x27;../../services/data-table-config.service&#x27;;
 import { DataTableEventStateService } from &#x27;../../services/data-table-event.service&#x27;;
 import { DataTableDataStateService } from &#x27;../../services/data-table-data-state.service&#x27;;
@@ -1414,11 +1426,9 @@ export class DataTableHeaderComponent implements OnDestroy {
   &lt;div class&#x3D;&quot;ng-data-table-action-button-container&quot;&gt;
     &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;ng-data-table-action-button ng-data-table-refresh-button&quot;
             (click)&#x3D;&quot;onReload()&quot; *ngIf&#x3D;&quot;config.showRefreshButton&quot; [disabled]&#x3D;&quot;dataStateService.dataLoading&quot;&gt;
-      &lt;i class&#x3D;&quot;zmdi zmdi-refresh&quot;&gt;&lt;/i&gt;
     &lt;/button&gt;
     &lt;button #columnSelector type&#x3D;&quot;button&quot; class&#x3D;&quot;ng-data-table-action-button ng-data-table-column-selector-button&quot;
             (click)&#x3D;&quot;toggleColumnSelector(columnSelector)&quot; (clickOutside)&#x3D;&quot;closeColumnSelector()&quot; *ngIf&#x3D;&quot;config.showColumnSelector&quot;&gt;
-      &lt;i class&#x3D;&quot;zmdi zmdi-view-list&quot;&gt;&lt;/i&gt;
     &lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1448,7 +1458,7 @@ export class DataTableHeaderComponent implements OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="ng-data-table-top-header">  <h4 class="ng-data-table-title" [textContent]="config.title"></h4>  <div class="ng-data-table-action-button-container">    <button type="button" class="ng-data-table-action-button ng-data-table-refresh-button"            (click)="onReload()" *ngIf="config.showRefreshButton" [disabled]="dataStateService.dataLoading">      <i class="zmdi zmdi-refresh"></i>    </button>    <button #columnSelector type="button" class="ng-data-table-action-button ng-data-table-column-selector-button"            (click)="toggleColumnSelector(columnSelector)" (clickOutside)="closeColumnSelector()" *ngIf="config.showColumnSelector">      <i class="zmdi zmdi-view-list"></i>    </button>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="ng-data-table-top-header">  <h4 class="ng-data-table-title" [textContent]="config.title"></h4>  <div class="ng-data-table-action-button-container">    <button type="button" class="ng-data-table-action-button ng-data-table-refresh-button"            (click)="onReload()" *ngIf="config.showRefreshButton" [disabled]="dataStateService.dataLoading">    </button>    <button #columnSelector type="button" class="ng-data-table-action-button ng-data-table-column-selector-button"            (click)="toggleColumnSelector(columnSelector)" (clickOutside)="closeColumnSelector()" *ngIf="config.showColumnSelector">    </button>  </div></div></div>'
     var COMPONENTS = [{'name': 'DataTableBodyComponent', 'selector': '[ngDataTableBody]'},{'name': 'DataTableColGroupComponent', 'selector': '[ngDataTableColGroup]'},{'name': 'DataTableColumnComponent', 'selector': 'ng-data-table-column'},{'name': 'DataTableColumnFilterHeaderComponent', 'selector': '[ngDataTableColumnFilterHeader]'},{'name': 'DataTableColumnFilterTemplateComponent', 'selector': 'ng-data-table-column-filter-template'},{'name': 'DataTableColumnSelectorComponent', 'selector': 'ng-data-table-column-selector'},{'name': 'DataTableColumnTitleHeaderComponent', 'selector': '[ngDataTableColumnTitleHeader]'},{'name': 'DataTableComponent', 'selector': 'ng-data-table'},{'name': 'DataTableHeadComponent', 'selector': '[ngDataTableHead]'},{'name': 'DataTableHeaderComponent', 'selector': 'ng-data-table-header'},{'name': 'DataTableLoadingSpinnerComponent', 'selector': 'ng-data-table-loading-spinner'},{'name': 'DataTableNoDataBodyComponent', 'selector': 'ng-data-table-no-data-body'},{'name': 'DataTablePaginationComponent', 'selector': 'ng-data-table-pagination'},{'name': 'DropdownComponent', 'selector': 'ng-dropdown'},{'name': 'DropdownFilterComponent', 'selector': 'ng-dropdown-filter'},{'name': 'DropdownOptionsComponent', 'selector': 'ng-dropdown-options'},{'name': 'DropdownViewComponent', 'selector': 'ng-dropdown-view'}];
     var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'ElementWidthDirective', 'selector': '[elementWidth]'},{'name': 'FocusDirective', 'selector': '[focus]'},{'name': 'InitDirective', 'selector': '[init]'},{'name': 'ScrollElementDirective', 'selector': '[scrollElement]'},{'name': 'ScrollPositionDirective', 'selector': '[scrollPosition]'}];
     var ACTUAL_COMPONENT = {'name': 'DataTableHeaderComponent'};

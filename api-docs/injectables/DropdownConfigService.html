@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -2173,7 +2185,7 @@ Used to manage dropdown base configuration state.</p>
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Inject, Injectable, InjectionToken } from &#x27;@angular/core&#x27;;
 
-import { get } from &#x27;lodash&#x27;;
+import get from &#x27;lodash-es/get&#x27;;
 
 import { DropdownConfig } from &#x27;../models/dropdown-config.model&#x27;;
 import { DropdownTranslations } from &#x27;../models/dropdown-translations.model&#x27;;

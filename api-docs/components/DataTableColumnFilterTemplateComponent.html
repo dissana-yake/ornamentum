@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -1415,7 +1427,6 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
       &lt;span class&#x3D;&quot;ng-data-table-input-group-btn&quot;&gt;
       &lt;button *ngIf&#x3D;&quot;column.showFilterClearButton&quot; [hidden]&#x3D;&quot;!column.filter&quot;
               class&#x3D;&quot;ng-data-table-delete-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearFilter()&quot;&gt;
-        &lt;i class&#x3D;&quot;zmdi zmdi-close&quot;&gt;&lt;/i&gt;
       &lt;/button&gt;
     &lt;/span&gt;
     &lt;/div&gt;
@@ -1469,7 +1480,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="column.filterable">  <ng-container *ngIf="column.filterTemplate"                [ngTemplateOutlet]="column.filterTemplate"                [ngTemplateOutletContext]="{ column: column, filter: customFilterStream }">  </ng-container>  <ng-container *ngIf="!column.filterTemplate">    <div class="ng-data-table-header-input-box" *ngIf="!column.showDropdownFilter">      <input type="text" [(ngModel)]="column.filter" [class.ng-data-table-clear-filter]="column.showFilterClearButton"             (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>      <span class="ng-data-table-input-group-btn">      <button *ngIf="column.showFilterClearButton" [hidden]="!column.filter"              class="ng-data-table-delete-button" type="button" (click)="clearFilter()">        <i class="zmdi zmdi-close"></i>      </button>    </span>    </div>    <ng-dropdown      *ngIf="column.showDropdownFilter"      [relativeParentElement]="config.relativeParentElement"      [dataSource]="filterDataStream"      [menuPosition]="column.dropdownFilterMenuPosition"      [filterable]="column.dropdownFilterSearchable"      [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"      [filterDebounce]="column.dropdownFilterSearchDebounce"      [selectMode]="column.dropdownFilterSelectMode"      [showSelectedOptionRemoveButton]="column.dropdownFilterShowSelectedOptionRemoveButton"      [showClearSelectionButton]="column.dropdownFilterShowClearSelectionButton"      [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"      [groupByField]="column.dropdownFilterGroupByField"      [showOptionSelectCheckbox]="column.dropDownFilterShowOptionSelectCheckbox"      [menuHeight]="column.dropdownFilterMenuHeight"      [menuWidth]="column.dropdownFilterMenuWidth"      [multiSelectOptionMaxWidth]="column.dropdownFilterMultiSelectOptionMaxWidth"      [closeMenuOnSelect]="column.dropdownFilterCloseMenuOnSelect"      [(ngModel)]="column.filter"      (selectChange)="filter.emit()">    </ng-dropdown>  </ng-container></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="column.filterable">  <ng-container *ngIf="column.filterTemplate"                [ngTemplateOutlet]="column.filterTemplate"                [ngTemplateOutletContext]="{ column: column, filter: customFilterStream }">  </ng-container>  <ng-container *ngIf="!column.filterTemplate">    <div class="ng-data-table-header-input-box" *ngIf="!column.showDropdownFilter">      <input type="text" [(ngModel)]="column.filter" [class.ng-data-table-clear-filter]="column.showFilterClearButton"             (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>      <span class="ng-data-table-input-group-btn">      <button *ngIf="column.showFilterClearButton" [hidden]="!column.filter"              class="ng-data-table-delete-button" type="button" (click)="clearFilter()">      </button>    </span>    </div>    <ng-dropdown      *ngIf="column.showDropdownFilter"      [relativeParentElement]="config.relativeParentElement"      [dataSource]="filterDataStream"      [menuPosition]="column.dropdownFilterMenuPosition"      [filterable]="column.dropdownFilterSearchable"      [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"      [filterDebounce]="column.dropdownFilterSearchDebounce"      [selectMode]="column.dropdownFilterSelectMode"      [showSelectedOptionRemoveButton]="column.dropdownFilterShowSelectedOptionRemoveButton"      [showClearSelectionButton]="column.dropdownFilterShowClearSelectionButton"      [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"      [groupByField]="column.dropdownFilterGroupByField"      [showOptionSelectCheckbox]="column.dropDownFilterShowOptionSelectCheckbox"      [menuHeight]="column.dropdownFilterMenuHeight"      [menuWidth]="column.dropdownFilterMenuWidth"      [multiSelectOptionMaxWidth]="column.dropdownFilterMultiSelectOptionMaxWidth"      [closeMenuOnSelect]="column.dropdownFilterCloseMenuOnSelect"      [(ngModel)]="column.filter"      (selectChange)="filter.emit()">    </ng-dropdown>  </ng-container></ng-container></div>'
     var COMPONENTS = [{'name': 'DataTableBodyComponent', 'selector': '[ngDataTableBody]'},{'name': 'DataTableColGroupComponent', 'selector': '[ngDataTableColGroup]'},{'name': 'DataTableColumnComponent', 'selector': 'ng-data-table-column'},{'name': 'DataTableColumnFilterHeaderComponent', 'selector': '[ngDataTableColumnFilterHeader]'},{'name': 'DataTableColumnFilterTemplateComponent', 'selector': 'ng-data-table-column-filter-template'},{'name': 'DataTableColumnSelectorComponent', 'selector': 'ng-data-table-column-selector'},{'name': 'DataTableColumnTitleHeaderComponent', 'selector': '[ngDataTableColumnTitleHeader]'},{'name': 'DataTableComponent', 'selector': 'ng-data-table'},{'name': 'DataTableHeadComponent', 'selector': '[ngDataTableHead]'},{'name': 'DataTableHeaderComponent', 'selector': 'ng-data-table-header'},{'name': 'DataTableLoadingSpinnerComponent', 'selector': 'ng-data-table-loading-spinner'},{'name': 'DataTableNoDataBodyComponent', 'selector': 'ng-data-table-no-data-body'},{'name': 'DataTablePaginationComponent', 'selector': 'ng-data-table-pagination'},{'name': 'DropdownComponent', 'selector': 'ng-dropdown'},{'name': 'DropdownFilterComponent', 'selector': 'ng-dropdown-filter'},{'name': 'DropdownOptionsComponent', 'selector': 'ng-dropdown-options'},{'name': 'DropdownViewComponent', 'selector': 'ng-dropdown-view'}];
     var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'ElementWidthDirective', 'selector': '[elementWidth]'},{'name': 'FocusDirective', 'selector': '[focus]'},{'name': 'InitDirective', 'selector': '[init]'},{'name': 'ScrollElementDirective', 'selector': '[scrollElement]'},{'name': 'ScrollPositionDirective', 'selector': '[scrollPosition]'}];
     var ACTUAL_COMPONENT = {'name': 'DataTableColumnFilterTemplateComponent'};

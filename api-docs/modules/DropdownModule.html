@@ -48,6 +48,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                        <a href="../changelog.html"
+                                    >
+                                        <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="../dependencies.html"
                                         
                                         >
@@ -425,6 +431,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../changelog.html"
+                                           >
+                                               <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="../dependencies.html"
@@ -974,7 +986,7 @@
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 
-import { UtilityModule } from &#x27;../utility&#x27;;
+import { UtilityModule } from &#x27;../utility/utility.module&#x27;;
 import { DropdownConfig } from &#x27;./models/dropdown-config.model&#x27;;
 
 import { DropdownComponent } from &#x27;./components/dropdown/dropdown.component&#x27;;
@@ -1023,6 +1035,18 @@ export class DropdownModule {
     };
   }
 }
+
+export { DropdownMenuPosition } from &#x27;./models/dropdown-menu-position.enum&#x27;;
+export { DropdownTranslations } from &#x27;./models/dropdown-translations.model&#x27;;
+export { DropdownItem } from &#x27;./models/dropdown-item.model&#x27;;
+export { DropdownRequestParams } from &#x27;./models/dropdown-request-params.model&#x27;;
+export { DropdownFilter } from &#x27;./models/dropdown-filter.model&#x27;;
+export { DropdownDataBindCallback } from &#x27;./models/dropdown-data-bind-callback.model&#x27;;
+export { DropdownQueryResult } from &#x27;./models/dropdown-query-result.model&#x27;;
+export { DropdownConfig } from &#x27;./models/dropdown-config.model&#x27;;
+export { DropdownSelectMode } from &#x27;./models/dropdown-select-mode.enum&#x27;;
+
+export { DropdownComponent } from &#x27;./components/dropdown/dropdown.component&#x27;;
 </code></pre>
     </div>
 </div>
